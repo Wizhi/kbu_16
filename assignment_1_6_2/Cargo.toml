@@ -1,0 +1,6 @@
+[package]
+name = "assignment_1_6_2"
+version = "0.1.0"
+authors = ["Simon Bo Dall Mikkelsen <simonbodall@gmail.com>"]
+
+[dependencies]
