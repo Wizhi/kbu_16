@@ -1,0 +1,51 @@
+// Original
+/*@ pre beløb >= 0 
+  @ assignable en, to, fem, ti, tyve
+  @ post en + (2 * to) + (5 * fem) + (10 * ti) + (20 * tyve) = beløb
+  @*/
+{
+  glovar int beløb;
+  glovar int en, to, fem, ti, tyve;
+
+  int b := beløb;
+
+  do b >= 1 -> en, b := en + 1, b - 1
+   | b >= 2 -> to, b := to + 1, b - 2
+   | b >= 5 -> fem, b := fem + 1, b - 5
+   | b >= 10 -> to, b := ti + 1, b - 10
+   | b >= 20 -> tyve, b := tyve + 1, b - 20
+  od
+}
+
+// Modified
+/*@ pre beløb >= 0 
+  @ assignable en, to, fem, ti, tyve
+  @ post en + (2 * to) + (5 * fem) + (10 * ti) + (20 * tyve) = beløb
+  @ post 
+  @*/
+{
+  glovar int beløb;
+  glovar int en, to, fem, ti, tyve;
+
+  int b := beløb;
+
+  do b >= 20 -> tyve, b := tyve + 1, b - 20
+   | b < 20 -> skip
+  od
+
+  do b >= 10 -> ti, b := ti + 1, b - 10
+   | b < 10 -> skip
+  od
+
+  do b >= 5 -> fem, b := fem + 1, b - 5
+   | b < 5 -> skip
+  od
+
+  do b >= 2 -> to, b := to + 1, b - 2
+   | b < 2 -> skip
+  od
+
+  do b >= 1 -> en, b := en + 1, b - 1
+   | b < 1 -> skip
+  od
+}
