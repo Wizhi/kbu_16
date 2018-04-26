@@ -1,13 +1,14 @@
 fn main() {
     // "glovars" / program tilstand
     // Nu32 -> værdi N af typen unsigned int 32
-    let belob = 117u32;
+    let belob = 0u32;
 
     // mut = mutable = "assignable"
     let (mut en, mut to, mut fem, mut ti, mut tyve) = (0u32, 0u32, 0u32, 0u32, 0u32);
 
     // @ pre / Q
-    assert_ne!(belob, 0);
+    //assert_eq!(belob >= 0, true);
+    // above is useless due to existing type limits
 
     // implementation / S
     {
