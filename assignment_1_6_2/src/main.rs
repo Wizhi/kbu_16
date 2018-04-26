@@ -1,7 +1,7 @@
 fn main() {
     // "glovars" / program tilstand
     // Nu32 -> værdi N af typen unsigned int 32
-    let belob = 100u32;
+    let belob = 117u32;
 
     // mut = mutable = "assignable"
     let (mut en, mut to, mut fem, mut ti, mut tyve) = (0u32, 0u32, 0u32, 0u32, 0u32);
@@ -13,29 +13,23 @@ fn main() {
     {
         let mut b = belob;
 
-        while b >= 20 {
-            tyve += 1;
-            b -= 20;
-        }
-
-        while b >= 10 {
-            ti += 1;
-            b -= 10;
-        }
-
-        while b >= 5 {
-            fem += 1;
-            b -= 5;
-        }
-
-        while b >= 2 {
-            to += 1;
-            b -= 2;
-        }
-
-        while b >= 1 {
-            en += 1;
-            b -= 1;
+        while b > 0 {
+            if b >= 20 {
+                tyve += 1;
+                b -= 20;
+            } else if b >= 10 {
+                ti += 1;
+                b -= 10;
+            } else if b >= 5 {
+                fem += 1;
+                b -= 5;
+            } else if b >= 2 {
+                to += 1;
+                b -= 2;
+            } else if b >= 1 {
+                en += 1;
+                b -= 1;
+            }
         }
     }
 
